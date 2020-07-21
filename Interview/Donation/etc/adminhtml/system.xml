@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="interview" translate="label" sortOrder="50">
+            <label>Interview</label>
+        </tab>
+        <section id="donation" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Donation</label>
+            <tab>interview</tab>
+            <resource>Interview_Donation::donation</resource>
+            <group id="donation" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Donation Config</label>
+                <field id="enable_donation" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Donation Feature</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="donation_block_image" translate="label comment" type="image" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Donation Block Image</label>
+                    <depends>
+                        <field id="*/*/enable_donation">1</field>
+                    </depends>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">interview/donation</upload_dir>
+                    <base_url type="media" scope_info="1">interview/donation</base_url>
+                    <comment>
+                        <![CDATA[Image will be placed in the donation block. (width:70px, height:70px, allowed extensions: jpeg, gif, png)]]>
+                    </comment>
+                </field>
+                <field id="donation_block_title" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Donation Block Title</label>
+                    <depends>
+                        <field id="*/*/enable_donation">1</field>
+                    </depends>
+                </field>
+                <field id="donation_block_description" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Donation Block Description</label>
+                    <depends>
+                        <field id="*/*/enable_donation">1</field>
+                    </depends>
+                </field>
+                <field id="donation_amount" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Donation Amount</label>
+                    <depends>
+                        <field id="*/*/enable_donation">1</field>
+                    </depends>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

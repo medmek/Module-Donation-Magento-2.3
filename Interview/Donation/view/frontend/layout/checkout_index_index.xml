@@ -1,0 +1,42 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="donation-step" xsi:type="array">
+                                            <item name="component" xsi:type="string">Interview_Donation/js/view/donation-step-view</item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="fee" xsi:type="array">
+                                                            <item name="component"  xsi:type="string">Interview_Donation/js/view/cart/totals/donation-fee</item>
+                                                            <item name="sortOrder" xsi:type="string">20</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Interview_Donation/cart/totals/donation-fee</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,22 @@
+{
+    "name": "test/module-donation",
+    "description": "Test Magento Module to showcase the donation feature",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Mohamed Mekkaoui",
+            "email": "mekkaoui.mpr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Test\\Donation\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

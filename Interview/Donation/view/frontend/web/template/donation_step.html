@@ -1,0 +1,32 @@
+<li id="donation_step" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="html: getTitle()" data-role="title" />
+    <div id="checkout-step-donation"
+         class="step-content"
+         data-role="content">
+
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <div id="donation-form" class="fieldset">
+                <div class="description" data-bind="html: getDescription()"></div>
+                <span class="image-container">
+                    <img data-bind="attr: {'src': getImageSource(), 'width': 70, 'height': 70, 'alt': getTitle(), 'title': getTitle()}"></img>
+                </span>
+
+
+                <div class="field choice">
+                    <input type="checkbox" class="checkbox" name="donation-add" id="donation-add" data-bind='checked: DonationCheckbox'/>
+                    <label class="label" for="donation-add">
+                        <span><!-- ko i18n: 'I want to donate' --><!-- /ko --> <!-- ko text: getFormattedAmount() --><!-- /ko --></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>
